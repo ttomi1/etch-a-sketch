@@ -44,6 +44,7 @@ button{
     width: 200px;
     box-shadow: 0px 0px 12px 2px #a09f9f;
     font-size: 18px;
+    transition: all .07s ease;
 }
 
 .sketch{
@@ -53,6 +54,11 @@ button{
     box-shadow: 0px 0px 12px 2px #a09f9f;
     display: flex;
     flex-wrap: wrap;
+}
+
+.playing{
+    transform: scale(1.1);
+    background-color: #868080;
 }
 
 .empty{

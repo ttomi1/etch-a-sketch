@@ -4,6 +4,7 @@ const colorButton = document.querySelector(".color");
 let colorPicker = document.querySelector('#favcolor');
 const sketch = document.querySelector(".sketch");
 const removeButton = document.querySelector(".remove");
+const buttons = document.querySelectorAll("button");
 let fieldNumber;
 let selectedColor;
 const array = [];
@@ -11,11 +12,13 @@ const array = [];
 rainbowButton.addEventListener("click", () =>{
   colorButton.classList.remove("active");
   rainbowButton.classList.add("active");
+  rainbowButton.classList.add("playing");
 })
 
 colorButton.addEventListener("click", () =>{
   rainbowButton.classList.remove("active");
   colorButton.classList.add("active");
+  colorButton.classList.add("playing");
 })
 
 for(let i = 0; i < (16*16); i++){
@@ -45,8 +48,10 @@ function remove(){
 
 fieldSize.addEventListener("click", () =>{
   remove();
-  checkDiv();
+  fieldSize.classList.add("playing");
   fieldNumber = +prompt("Enter");
+  if(fieldNumber != 0 ){
+    checkDiv();
   for(let i = 0; i < (fieldNumber*fieldNumber); i++){
     let div = document.createElement("div");
     const cellWidth = `calc(640px / ${fieldNumber})`; 
@@ -55,6 +60,7 @@ fieldSize.addEventListener("click", () =>{
     div.classList.add("basic");
     sketch.appendChild(div);
   }
+}
 })
 
 function getBlock(){
@@ -95,6 +101,16 @@ sketch.addEventListener("mouseover", () =>{
 
 removeButton.addEventListener("click", ()=>{
   remove();
+  removeButton.classList.add("playing");
 })
+
+function removeTransition(e){
+  if(e.propertyName !== "transform") return;
+    this.classList.remove("playing");
+}
+
+buttons.forEach(element => {
+  element.addEventListener("transitionend", removeTransition)
+});
 
 
