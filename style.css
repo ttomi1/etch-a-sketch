@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 230, 230);
+}
+
+header{
+    text-align: center;
+    font-size: 64px;
+    padding: 20px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin: auto 0;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+#favcolor{
+    border: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+button{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 12px;
+    width: 200px;
+    box-shadow: 0px 0px 12px 2px #a09f9f;
+    font-size: 18px;
+}
+
+.sketch{
+    width: 640px;
+    height: 640px;
+    background-color: white;
+    box-shadow: 0px 0px 12px 2px #a09f9f;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.empty{
+    background-color: white;
+}
